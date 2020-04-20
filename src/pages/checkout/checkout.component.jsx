@@ -9,6 +9,7 @@ import {
 
 import './checkout.styles.scss'
 import CheckoutItem from '../../components/checkout-item/checkout-item.component'
+import StripeCheckoutButton from '../../components/stripe-button/stripe-button.component'
 
 const CheckoutPage = ({ cartItems, total }) => (
   <div className="checkout-page">
@@ -36,6 +37,12 @@ const CheckoutPage = ({ cartItems, total }) => (
     <div className="total">
       <span>TOTAL: ${total}</span>
     </div>
+    <div className="test-warning">
+      *Please use the following test credit cart for payments*
+      <br />
+      4242 4242 4242 4242 - Exp: 01/29 - CVV: 999
+    </div>
+    <StripeCheckoutButton price={total} />
   </div>
 )
 
